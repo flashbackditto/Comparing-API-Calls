@@ -32,3 +32,17 @@ fetch('https://api.github.com/users')
 .then(res => res.json())
 //log the data
 .then(data => console.log(data));
+
+//ES7 standard Async/Await
+async function getData()
+{
+   //await the response of the Call
+   let response = await fetch ('https://api.github.com/users');
+   //continue once the first *promise?* is resolved
+   let data = await response.json()
+   // continue after the second promise is resolved
+   return data;
+}
+//call getData function
+getData()
+.then(data => console.log(data));//log the data
