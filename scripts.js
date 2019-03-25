@@ -4,7 +4,7 @@
 let request = new XMLHttpRequest();
 
 // Call the open function, GET-type request, url, true in regards to asynchronous
-request.open('GET', 'https://restcountries.eu/rest/v2/all', true);
+request.open('GET', 'https://api.github.com/users', true);
 
 // call the onload function
 request.onload = function () {
@@ -21,9 +21,9 @@ request.onload = function () {
     console.log(data);
   }
 }
-
 //call send
   request.send();
+
 
 // Fetch API - Newest standard HTTPRequest, limited browser compatability..?
 //call the fetch function
@@ -32,6 +32,7 @@ fetch('https://api.github.com/users')
 .then(res => res.json())
 //log the data
 .then(data => console.log(data));
+
 
 //ES7 standard Async/Await
 async function getData()
